@@ -18,7 +18,6 @@ const Home = ({ ...props }) => {
 
   // Get products on server when searchValue change
   useEffect(() => {
-    return () => {
       setLoading(true);
 
       (async () => {
@@ -34,7 +33,6 @@ const Home = ({ ...props }) => {
 
       // Console for remove console warnings
       console.log(products, loading);
-    };
   }, [searchValue]);
 
   return (
