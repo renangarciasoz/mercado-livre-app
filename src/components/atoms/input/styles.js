@@ -11,4 +11,4 @@ const StyledInput = styled.input`
   box-sizing: border-box;
 `;
 
-export { StyledInput };
+export default StyledInput;

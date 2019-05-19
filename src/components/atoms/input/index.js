@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // Style component
-import { StyledInput } from "./styles";
+import StyledInput from "./styles";
 
 const Input = ({ ...props }) => <StyledInput {...props} />;
 

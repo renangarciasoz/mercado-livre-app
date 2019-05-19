@@ -5,4 +5,4 @@ const StyledImage = styled.img`
   vertical-align: top;
 `;
 
-export { StyledImage };
+export default StyledImage;
