@@ -43,6 +43,10 @@ const ProductInfos = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    flex-wrap: wrap;
+  }
 `;
 
 const PriceAndTitle = styled.div`
@@ -50,7 +54,7 @@ const PriceAndTitle = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  max-width: 600px;
+  max-width: 500px;
 `;
 
 const Price = styled.div`
@@ -66,6 +70,10 @@ const Price = styled.div`
     font-size: 24px;
     margin-right: 10px;
     font-weight: normal;
+
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      min-width: 60px;
+    }
   }
 `;
 
@@ -88,6 +96,11 @@ const City = styled.h3`
   margin: 0;
   margin-top: 8px;
   font-weight: normal;
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    width: 50%;
+    max-width: 100px;
+  }
 `;
 
 export { StyledProduct, ProductInfos, PriceAndTitle, Price, Title, City };

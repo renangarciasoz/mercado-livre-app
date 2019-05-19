@@ -10,5 +10,8 @@ export const themeDefault = {
     sizes: {
         maxWidth: '1024px',
         minWidth: '300px',
+    },
+    breakpoints: {
+        phone: '678px',
     }
 }
