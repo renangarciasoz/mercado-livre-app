@@ -8,9 +8,10 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
-	"scope": "/",
+  "start_url": ".",
+	"scope": ".",
   "display": "standalone",
   "theme_color": "#FFE600",
-  "background_color": "#EEEEEE"
+  "background_color": "#EEEEEE",
+  "orientation": "any"
 }
