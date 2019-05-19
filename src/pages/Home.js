@@ -3,20 +3,25 @@ import axios from "axios";
 
 import Header from "../components/organisms/header";
 
-const Home = ({...props}) => {
+const Home = ({ ...props }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 
+  const getSearchValue = () => {
+    if (props.location.search)
+      return setSearchValue(props.location.search).replace("?search=", "");
+  };
+
   // Setting search value
-  useEffect(() => props.location.search ? setSearchValue(props.location.search).replace("?search=", "") : setSearchValue(""));
+  useEffect(() => getSearchValue(), [props.location.search]);
 
   // Get products on server when searchValue change
   useEffect(() => {
     return () => {
       setLoading(true);
 
-      async function searchProducts() {
+      (async () => {
         const response = await axios.get(
           `http://localhost:1337/api/items?search=${searchValue}`
         );
@@ -25,12 +30,10 @@ const Home = ({...props}) => {
           setLoading(false);
           setProducts(response.data);
         }
-      }
-
-      searchProducts();
+      })();
 
       // Console for remove console warnings
-      console.log(products, loading)
+      console.log(products, loading);
     };
   }, [searchValue]);
 
