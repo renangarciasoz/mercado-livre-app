@@ -1,10 +1,7 @@
-
 import React, { Component } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { themeDefault } from "./themes/default";
 
-import { Provider } from "react-redux";
-import store from "./store";
 import Routes from "./routes";
 
 const GlobalStyle = createGlobalStyle`
@@ -25,14 +22,12 @@ const GlobalStyle = createGlobalStyle`
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <ThemeProvider theme={themeDefault}>
-          <>
-            <GlobalStyle />
-            <Routes />
-          </>
-        </ThemeProvider>
-      </Provider>
+      <ThemeProvider theme={themeDefault}>
+        <>
+          <GlobalStyle />
+          <Routes />
+        </>
+      </ThemeProvider>
     );
   }
 }
