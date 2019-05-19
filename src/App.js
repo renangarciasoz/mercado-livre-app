@@ -9,10 +9,16 @@ import Routes from "./routes";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    box-sizing: border-box;
-    font-size: 18px;
     margin: 0;
     padding: 0;
+    font-size: 18px;
+    box-sizing: border-box;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background-color: ${props => props.theme.pallete.lightGrey};
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
   }
 `;
 
@@ -21,10 +27,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ThemeProvider theme={themeDefault}>
-          <div>
+          <>
             <GlobalStyle />
             <Routes />
-          </div>
+          </>
         </ThemeProvider>
       </Provider>
     );

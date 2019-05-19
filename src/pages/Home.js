@@ -1,7 +1,15 @@
-import React from 'react';
+import React from "react";
+
+import Header from "../components/organisms/header";
 
 export default class Home extends React.Component {
   render() {
-    return <div></div>
+    return (
+      <>
+        <Header />
+        <main />
+        <footer />
+      </>
+    );
   }
 }
