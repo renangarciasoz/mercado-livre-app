@@ -4,7 +4,7 @@
   "icons": [
     {
       "src": "precomposed.png",
-      "sizes": "76x76 120x120 152x152 64x64 32x32 24x24 16x16",
+      "sizes": "512x512 192x192 152x152 120x120 76x76 64x64 32x32 24x24 16x16",
       "type": "image/png"
     }
   ],
