@@ -1,8 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { themeDefault } from "./themes/default";
 
+import store from "./store";
 import Routes from "./routes";
+import { Provider } from "react-redux";
+import Header from "./components/organisms/header";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,17 +27,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <Provider store={store}>
       <ThemeProvider theme={themeDefault}>
         <>
           <GlobalStyle />
+          <Header />
           <Routes />
         </>
       </ThemeProvider>
-    );
-  }
-}
+    </Provider>
+  );
+};
 
 export default App;
