@@ -25,10 +25,6 @@ const StyledProduct = styled.div`
     margin-right: 16px;
   }
 
-  &:last-child {
-    border-bottom: none;
-  }
-
   @keyframes Gradient {
     0% {
         background-position: 0% 50%
@@ -70,10 +66,17 @@ const Price = styled.div`
     font-size: 24px;
     margin-right: 10px;
     font-weight: normal;
+    display: flex;
+    align-items: flex-start;
 
     @media (max-width: ${props => props.theme.breakpoints.phone}) {
       min-width: 60px;
     }
+  }
+  
+  span {
+    font-size: 16px;
+    margin-top: 3px;
   }
 `;
 

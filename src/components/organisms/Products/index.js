@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import Product from "../../molecules/Product";
 import { StyledSection, Error } from "./styles";
 
-const Products = ({...props}) => {
-
+const Products = ({ ...props }) => {
   const getSection = () => {
     // Lazy load
-    if (props.products.loadingProducts) return <Product loading={props.products.loadingProducts} />
-    
+    if (props.products.loadingProducts)
+      return <Product loading={props.products.loadingProducts} />;
+
     // Products
     if (props.products.products.length > 0)
       return (
@@ -20,16 +20,13 @@ const Products = ({...props}) => {
           ))}
         </ol>
       );
-      
+
     // Message error
     return <Error> No hay anuncios que coincidan con tu búsqueda. </Error>;
   };
 
-  return <StyledSection>
-    {getSection()}
-  </StyledSection>;
+  return <StyledSection>{getSection()}</StyledSection>;
 };
-
 
 function mapStateToProps(state) {
   return {
@@ -38,5 +35,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps, null
+  mapStateToProps,
+  null
 )(Products);

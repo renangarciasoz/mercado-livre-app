@@ -1,4 +1,5 @@
 import React from "react";
+import history from "../../../routes/history";
 
 import {
   StyledProduct,
@@ -12,14 +13,28 @@ import {
 import Image from "../../atoms/image";
 
 const Product = ({ loading, ...props }) => {
+  const goToDetails = () => {
+    if (!loading)
+      return history.push(
+        `/items/${props.id}/${props.title.split(" ").join("-")}`
+      );
+  };
+
   return (
-    <StyledProduct {...props} loading={loading}>
+    <StyledProduct {...props} loading={loading} onClick={goToDetails}>
       <Image src={props.picture} alt={props.title} />
       <ProductInfos>
         <PriceAndTitle>
           <Title>{props.title}</Title>
           <Price>
-            <h2>{props.value || ""}</h2>
+            {props.price ? (
+              <h2>
+                $ {props.price.amount.toLocaleString("pt-BR", props.price)}
+                <span>{props.price.decimals}</span>
+              </h2>
+            ) : (
+              ""
+            )}
             {props.free_shipping ? <span /> : ""}
           </Price>
         </PriceAndTitle>
