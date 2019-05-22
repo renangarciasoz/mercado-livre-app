@@ -24,7 +24,12 @@ const ProductDetails = ({ product }) => {
             <ProductImage src={product.picture} alt={product.title} />
             <Description>
               <h3> Descripción del producto </h3>
-              <p>{product.description}</p>
+              <p>
+                {product.description &&
+                  product.description.split("\n").map((item, i) => {
+                    return <p key={i}>{item}</p>;
+                  })}
+              </p>
             </Description>
           </ImageAndDescription>
           <div>

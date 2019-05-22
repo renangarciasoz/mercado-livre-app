@@ -67,6 +67,7 @@ const BuyButton = styled.button`
   outline: none;
   color: white;
   background-color: ${props => props.theme.pallete.blue};
+  cursor: pointer;
 `;
 
 export { ImageAndDescription, Description, ProductImage, BuyInfos, Price, Title, Info, BuyButton };

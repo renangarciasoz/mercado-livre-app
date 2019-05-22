@@ -26,9 +26,9 @@ export function getProducts() {
   return async (dispatch, getState) => {
     dispatch(setLoadingProducts(true));
     await axios
-      .get(`http://localhost:4000/api/items?search=${getState().searchValue}`)
+      .get(`http://localhost:8080/api/items?search=${getState().searchValue}`)
       .then(res => {
-        dispatch(setProducts(res.data[0].items));
+        dispatch(setProducts(res.data.items));
       })
       .finally(() => {
         dispatch(setLoadingProducts(false));
@@ -39,6 +39,6 @@ export function getProducts() {
 export function getProduct(id) {
   return async dispatch =>
     await axios
-      .get(`http://localhost:4000/api/items/${id}`)
-      .then(res => dispatch(setProduct(res.data[0].item)));
+      .get(`http://localhost:8080/api/items/${id}`)
+      .then(res => dispatch(setProduct(res.data.item)));
 }

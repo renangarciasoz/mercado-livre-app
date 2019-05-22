@@ -5,6 +5,7 @@ import {
   StyledProduct,
   ProductInfos,
   PriceAndTitle,
+  FreeShipping,
   Title,
   Price,
   City
@@ -35,10 +36,10 @@ const Product = ({ loading, ...props }) => {
             ) : (
               ""
             )}
-            {props.free_shipping ? <span /> : ""}
+            {props.free_shipping ? <FreeShipping /> : ""}
           </Price>
         </PriceAndTitle>
-        <City>{props.cityFrom || ""}</City>
+        <City>{props.city_from || ""}</City>
       </ProductInfos>
     </StyledProduct>
   );

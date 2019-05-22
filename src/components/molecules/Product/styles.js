@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
+import shipping from "../../../assets/icons/shipping.png"
+
 const StyledProduct = styled.div`
   padding: 16px;
   display: flex;
   background-color: white;
   width: calc(100% - 32px);
   border-bottom: 2px solid ${props => props.theme.pallete.lightGrey};
+  cursor: pointer;
 
   h1, h2, h3, img {
     ${props => props.loading ?
@@ -35,6 +38,13 @@ const StyledProduct = styled.div`
   }
 `;
 
+const FreeShipping = styled.span`
+  width: 30px;
+  height: 30px;
+  background: url(${shipping}) center center no-repeat;
+  background-size: contain;
+`
+
 const ProductInfos = styled.div`
   width: 100%;
   display: flex;
@@ -61,7 +71,7 @@ const Price = styled.div`
   margin-bottom: 32px;
 
   h2 {
-    min-width: 30%;
+    min-width: 20%;
     margin: 0;
     font-size: 24px;
     margin-right: 10px;
@@ -106,4 +116,4 @@ const City = styled.h3`
   }
 `;
 
-export { StyledProduct, ProductInfos, PriceAndTitle, Price, Title, City };
+export { StyledProduct, ProductInfos, FreeShipping, PriceAndTitle, Price, Title, City };
